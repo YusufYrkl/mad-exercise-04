@@ -63,7 +63,7 @@ fun MovieList(
     viewModel: MoviesViewModel
 ){
     LazyColumn(modifier = modifier) {
-        items(movies) { movie ->
+        items(viewModel.movies) { movie ->
             MovieRow(
                 movie = movie,
                 onFavoriteClick = {movieId ->
@@ -149,11 +149,12 @@ fun FavoriteIcon(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(10.dp)
-            .clickable { onFavoriteClick() },
+            .padding(10.dp),
         contentAlignment = Alignment.TopEnd
     ){
         Icon(
+            modifier = Modifier.clickable {
+                onFavoriteClick() },
             tint = MaterialTheme.colorScheme.secondary,
             imageVector =
             if (isFavorite) {
