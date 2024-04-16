@@ -63,7 +63,7 @@ fun MovieList(
     viewModel: MoviesViewModel
 ){
     LazyColumn(modifier = modifier) {
-        items(viewModel.movies) { movie ->
+        items(movies) { movie ->
             MovieRow(
                 movie = movie,
                 onFavoriteClick = {movieId ->
