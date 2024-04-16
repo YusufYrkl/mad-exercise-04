@@ -31,7 +31,7 @@ fun Navigation() {
             DetailScreen(
                 navController = navController,
                 movieId = backStackEntry.arguments?.getString(DETAIL_ARGUMENT_KEY),
-                moviesViewModel = moviesViewModel
+                viewModel = moviesViewModel
                 )
         }
 
